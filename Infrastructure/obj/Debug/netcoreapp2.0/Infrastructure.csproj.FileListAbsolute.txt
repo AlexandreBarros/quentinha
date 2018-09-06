@@ -1,0 +1,12 @@
+E:\Projetos\Quentinha-Carioca\Infrastructure\bin\Debug\netcoreapp2.0\Infrastructure.deps.json
+E:\Projetos\Quentinha-Carioca\Infrastructure\bin\Debug\netcoreapp2.0\Infrastructure.dll
+E:\Projetos\Quentinha-Carioca\Infrastructure\bin\Debug\netcoreapp2.0\Infrastructure.pdb
+E:\Projetos\Quentinha-Carioca\Infrastructure\bin\Debug\netcoreapp2.0\Quentinha-Carioca.dll
+E:\Projetos\Quentinha-Carioca\Infrastructure\bin\Debug\netcoreapp2.0\Quentinha-Carioca.pdb
+E:\Projetos\Quentinha-Carioca\Infrastructure\obj\Debug\netcoreapp2.0\Infrastructure.csprojAssemblyReference.cache
+E:\Projetos\Quentinha-Carioca\Infrastructure\obj\Debug\netcoreapp2.0\Infrastructure.csproj.CoreCompileInputs.cache
+E:\Projetos\Quentinha-Carioca\Infrastructure\obj\Debug\netcoreapp2.0\Infrastructure.AssemblyInfoInputs.cache
+E:\Projetos\Quentinha-Carioca\Infrastructure\obj\Debug\netcoreapp2.0\Infrastructure.AssemblyInfo.cs
+E:\Projetos\Quentinha-Carioca\Infrastructure\obj\Debug\netcoreapp2.0\Infrastructure.csproj.CopyComplete
+E:\Projetos\Quentinha-Carioca\Infrastructure\obj\Debug\netcoreapp2.0\Infrastructure.dll
+E:\Projetos\Quentinha-Carioca\Infrastructure\obj\Debug\netcoreapp2.0\Infrastructure.pdb

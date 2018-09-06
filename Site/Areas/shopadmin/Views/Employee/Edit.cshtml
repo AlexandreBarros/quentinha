@@ -1,0 +1,134 @@
+﻿@model QuentinhaCarioca.Root.ViewModel.EmployeeRequest
+@using QuentinhaCarioca.Root;
+@{
+    ViewData["Title"] = "Editar usuário";
+    Layout = "~/Areas/shopadmin/Views/Shared/_Layout.cshtml";
+}
+
+<hr />
+<form id="IndividualForm" asp-area="shopadmin" asp-controller="IndividualUser" asp-action="Create" method="post">
+    <input type="hidden" asp-for="LegalUserId" value="3F848F47-D1B7-4AAD-BE15-7B43EF722616" />
+    <input type="hidden" asp-for="EmployeeId" />
+
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="FirstName" class="control-label">Nome</label>
+            <input type="text" required asp-for="FirstName" class="form-control" maxlength="30" />
+        </div>
+        <div class="col-md-6">
+            <label asp-for="LastName" class="control-label">Sobrenome</label>
+            <input type="text" required asp-for="LastName" class="form-control" maxlength="30" />
+        </div>
+
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="UserName" class="control-label">Nome de Usuário</label>
+            <input type="text" required asp-for="UserName" class="form-control" maxlength="30" />
+        </div>
+    </div>
+    <br />
+    <hr />
+    <h5>Contatos</h5>
+    <div class="row">
+        <div class="col-md-4" style="padding-left: 10px;">
+            <label class="control-label">E-mail</label>
+            <input type="email" class="form-control" id="Email" name="Email" maxlength="50" />
+            <input type="hidden" class="form-control" id="ContactName" name="ContactName" maxlength="50" />
+        </div>
+        <div class="col-md-4" style="padding-left: 3px;">
+            <label class="control-label">Telefone</label>
+            <input id="Phone" name="Phone" data-inputmask="'mask': '(99)9999-9999'" class="form-control" />
+        </div>
+        <div class="col-md-4" style="padding-left: 3px;">
+            <label class="control-label">Celular</label>
+            <input id="CellPhone" name="CellPhone" data-inputmask="'mask': '(99)99999-9999'" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <br />
+            <input type="button" onclick="AddContact();" class="btn btn-primary" value="Adicionar" />
+            <br />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+            <table id="tbContact" class="table table-striped">
+                <tr>
+                    <th style="width:25%;">E-mail</th>
+                    <th style="width:25%;">Telefone</th>
+                    <th style="width:25%;">Celular</th>
+                    <th style="width:25%;"></th>
+                </tr>
+                <tbody id="bodyContact">
+                    @{
+                        int counter = 0;
+                        foreach (Contact item in Model.Contacts)
+                        {
+                            <tr id="@item.ContactId">
+                                <td>
+                                    <input type="text" asp-for="Contacts[counter].Email" class="form-control" style="border-style:none;" value="@item.Email" />
+                                </td>
+                                <td>
+                                    <input type="text" asp-for="Contacts[counter].Phone" class="form-control" style="border-style:none;" value="@item.Phone" />
+                                </td>
+                                <td>
+                                    <input type="hidden" asp-for="Contacts[counter].ContactId" class="form-control" style="border-style:none;" value="@item.ContactId" />
+                                    <input type="text" asp-for="Contacts[counter].CellPhone" class="form-control" style="border-style:none;" value="@item.CellPhone" />
+                                </td>
+                                <td>
+                                    <input type="button" id="rowCtc_@item.ContactId" class="btn btn-default" value="Remover" onclick="Remove(this)" />
+                                </td>
+                            </tr>
+                            counter++;
+                        }
+                    }
+                </tbody>
+            </table>
+            <br />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-1">
+            <input type="submit" value="Registrar" class="btn btn-default" />
+        </div>
+        <div class="col-md-1">
+            @if (!Model.DetachmentDate.HasValue)
+            {
+                <input type="button" onclick="Remove(this)" id="@Model.EmployeeId" value="Desativar" class="btn btn-default" />
+            }
+            else
+            {
+                <input type="button" onclick="Reactivate(this)" id="@Model.EmployeeId" value="Reativar" class="btn btn-default" />
+            }
+        </div>
+    </div>
+</form>
+<script src="~/appjs/contact.js"></script>
+<script src="~/appjs/employee.js"></script>
+
+<script>
+    //contactId,name, phone, cellPhone, email
+    //addressId, street, number, addOn, zipCode, neighborHood,city
+$(function () {
+    var count = @Model.Contacts.Count;
+    $('[name="Contacts[1].ContactName"]').val()
+    for(var i = 0; i < count; i++){
+        contactList.push(new Contact(
+            $('[name="Contacts['+ i +'].ContactId"]').val()
+            , $('[name="Contacts['+ i +'].ContactName"]').val()
+            , $('[name="Contacts['+ i +'].Phone"]').val()
+            , $('[name="Contacts['+ i +'].CellPhone"]').val()
+            , $('[name="Contacts['+ i +'].Email"]').val())
+            );
+    };
+});
+</script>
+

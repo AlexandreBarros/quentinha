@@ -1,0 +1,14 @@
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\bin\Debug\netcoreapp2.1\Quentinha-Carioca.deps.json
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\bin\Debug\netcoreapp2.1\Quentinha-Carioca.dll
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\bin\Debug\netcoreapp2.1\Quentinha-Carioca.pdb
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\obj\Debug\netcoreapp2.1\Quentinha-Carioca.csprojAssemblyReference.cache
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\obj\Debug\netcoreapp2.1\Quentinha-Carioca.csproj.CoreCompileInputs.cache
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\obj\Debug\netcoreapp2.1\Quentinha-Carioca.AssemblyInfoInputs.cache
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\obj\Debug\netcoreapp2.1\Quentinha-Carioca.AssemblyInfo.cs
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\obj\Debug\netcoreapp2.1\Quentinha-Carioca.dll
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\obj\Debug\netcoreapp2.1\Quentinha-Carioca.pdb
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\obj\Debug\netcoreapp2.1\Quentinha-Carioca.csproj.CopyComplete
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Http.Features.dll
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Http.Features.xml

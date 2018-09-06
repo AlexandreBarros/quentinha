@@ -1,0 +1,14 @@
+E:\Projetos\Quentinha-Carioca\Repository\bin\Debug\netcoreapp2.0\Repository.deps.json
+E:\Projetos\Quentinha-Carioca\Repository\bin\Debug\netcoreapp2.0\Repository.dll
+E:\Projetos\Quentinha-Carioca\Repository\obj\Debug\netcoreapp2.0\Repository.csprojAssemblyReference.cache
+E:\Projetos\Quentinha-Carioca\Repository\obj\Debug\netcoreapp2.0\Repository.csproj.CoreCompileInputs.cache
+E:\Projetos\Quentinha-Carioca\Repository\obj\Debug\netcoreapp2.0\Repository.AssemblyInfoInputs.cache
+E:\Projetos\Quentinha-Carioca\Repository\obj\Debug\netcoreapp2.0\Repository.AssemblyInfo.cs
+E:\Projetos\Quentinha-Carioca\Repository\bin\Debug\netcoreapp2.0\Quentinha-Carioca.dll
+E:\Projetos\Quentinha-Carioca\Repository\bin\Debug\netcoreapp2.0\Repository.pdb
+E:\Projetos\Quentinha-Carioca\Repository\bin\Debug\netcoreapp2.0\Quentinha-Carioca.pdb
+E:\Projetos\Quentinha-Carioca\Repository\obj\Debug\netcoreapp2.0\Repository.csproj.CopyComplete
+E:\Projetos\Quentinha-Carioca\Repository\obj\Debug\netcoreapp2.0\Repository.dll
+E:\Projetos\Quentinha-Carioca\Repository\obj\Debug\netcoreapp2.0\Repository.pdb
+E:\Projetos\Quentinha-Carioca\Repository\bin\Debug\netcoreapp2.0\Repository.runtimeconfig.json
+E:\Projetos\Quentinha-Carioca\Repository\bin\Debug\netcoreapp2.0\Repository.runtimeconfig.dev.json

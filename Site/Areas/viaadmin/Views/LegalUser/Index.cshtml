@@ -1,0 +1,70 @@
+﻿@model IEnumerable<QuentinhaCarioca.Root.ViewModel.LegalUserResponse>
+
+@{
+    ViewData["Title"] = "Empresas registradas no sistema";
+    Layout = "~/Areas/viaadmin/Views/Shared/_Layout.cshtml";
+}
+<a href="LegalUser/Create">Criar</a>
+<hr />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Razão Social
+            </th>
+            <th>
+                Nome Fantasia
+            </th>
+            <th>
+                CNPJ
+            </th>
+            <th>
+                Criado em
+            </th>
+            <th>
+                Ativo
+            </th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count() > 0)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="./legaluser/edit?identifier=@item.LegalUserId">
+                            @item.LegalName
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExhibitionName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CNPJ)
+                    </td>
+                    <td>
+                        @item.CreationDate.ToShortDateString()
+                    </td>
+                    <td>
+                        @if (item.DetachmentDate.HasValue)
+                        {
+                            item.DetachmentDate.Value.ToShortDateString();
+                        }
+                        else
+                        {
+                            <label>ATIVO</label>
+
+                        }
+                    </td>
+                    <td>
+                        <input id="@item.LegalUserId" type="button" class="btn btn-default" style="font-size:small;" value="Desativar" onclick="Remove(this)" />
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

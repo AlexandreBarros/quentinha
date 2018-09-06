@@ -1,0 +1,14 @@
+E:\Projetos\Quentinha-Carioca\Infrastructure\bin\Debug\netcoreapp2.1\Infrastructure.deps.json
+E:\Projetos\Quentinha-Carioca\Infrastructure\bin\Debug\netcoreapp2.1\Infrastructure.dll
+E:\Projetos\Quentinha-Carioca\Infrastructure\bin\Debug\netcoreapp2.1\Infrastructure.pdb
+E:\Projetos\Quentinha-Carioca\Infrastructure\bin\Debug\netcoreapp2.1\Quentinha-Carioca.dll
+E:\Projetos\Quentinha-Carioca\Infrastructure\bin\Debug\netcoreapp2.1\Quentinha-Carioca.pdb
+E:\Projetos\Quentinha-Carioca\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.csprojAssemblyReference.cache
+E:\Projetos\Quentinha-Carioca\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.csproj.CoreCompileInputs.cache
+E:\Projetos\Quentinha-Carioca\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.AssemblyInfoInputs.cache
+E:\Projetos\Quentinha-Carioca\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.AssemblyInfo.cs
+E:\Projetos\Quentinha-Carioca\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.csproj.CopyComplete
+E:\Projetos\Quentinha-Carioca\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.dll
+E:\Projetos\Quentinha-Carioca\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.pdb
+E:\Projetos\Quentinha-Carioca\Infrastructure\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Http.Features.dll
+E:\Projetos\Quentinha-Carioca\Infrastructure\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Http.Features.xml

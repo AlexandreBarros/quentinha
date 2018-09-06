@@ -1,0 +1,95 @@
+﻿@model QuentinhaCarioca.Root.LegalUserSettings
+
+@{
+    ViewData["Title"] = "Configurações do Estabelecimento";
+    Layout = "~/Areas/shopadmin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <label>Se desmarcado seu estabelecimento não estará apto a realizar pedidos independente das outras configurações</label>
+        <br />
+        <input type="checkbox" checked="checked" asp-for="IsOpen" style="right:15px;" />
+
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <label asp-for="DeliveryCoust" class="control-label">Se há acréscimos para entrega à domícilio, informe o preço</label>
+        <input asp-for="DeliveryCoust" type="text" min="0" max="100" class="form-control" />
+    </div>
+</div>
+<br />
+<hr />
+<h5>Horário de Funcionamento</h5>
+<div class="row">
+    <div class="col-md-6">
+        @{
+            string[] weekDays = { "Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado" };
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Funciona</th>
+                        <th>Horário Inicial</th>
+                        <th>Horário Final</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < 6; i++)
+                    {
+                        <tr>
+                            <td>
+                                <label>@weekDays[i]</label>
+                            </td>
+
+                            @{
+                                switch (i)
+                                {
+                                    case 0:
+                                        <td><label>@Model.SundayIsWorkDay</label></td>
+                                        <td><label>@Model.SundayStartHour</label></td>
+                                        <td><label>@Model.SundayEndHour</label></td>
+                                        break;
+                                    case 1:
+                                        <td><label>@Model.MondayIsWorkDay</label></td>
+                                        <td><label>@Model.MondayStartHour</label></td>
+                                        <td><label>@Model.MondayEndHour</label></td>
+                                        break;
+                                    case 2:
+                                        <td><label>@Model.TuesdayIsWorkDay</label></td>
+                                        <td><label>@Model.TuesdayStartHour</label></td>
+                                        <td><label>@Model.TuesdayEndHour</label></td>
+                                        break;
+                                    case 3:
+                                        <td><label>@Model.WednesdayIsWorkDay</label></td>
+                                        <td><label>@Model.WednesdayStartHour</label></td>
+                                        <td><label>@Model.WednesdayEndHour</label></td>
+                                        break;
+                                    case 4:
+                                        <td><label>@Model.ThursdayIsWorkDay</label></td>
+                                        <td><label>@Model.ThursdayStartHour</label></td>
+                                        <td><label>@Model.ThursdayEndHour</label></td>
+                                        break;
+                                    case 5:
+                                        <td><label>@Model.FridayIsWorkDay</label></td>
+                                        <td><label>@Model.FridayStartHour</label></td>
+                                        <td><label>@Model.FridayEndHour</label></td>
+                                        break;
+                                    case 6:
+                                        <td><label>@Model.SaturdayIsWorkDay</label></td>
+                                        <td><label>@Model.SaturdayStartHour</label></td>
+                                        <td><label>@Model.SaturdayEndHour</label></td>
+                                        break;
+                                }
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        }
+        @Html.ActionLink("Editar","Edit",new { identifier = Model.LegalUserSettingsId } ,new { @class="btn btn-default"})
+    </div>
+</div>

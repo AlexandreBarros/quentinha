@@ -1,0 +1,21 @@
+<Page ux:Class="HomePage">
+    <Router ux:Dependency="router" />    
+    <Font File="../Assets/OpenSans-SemiBold.ttf" ux:Global="SemiBold" />
+    <Text ux:Class="DefaultText" Color="#fff" Font="SemiBold" />
+    <DefaultText ux:Class="Weekday" Color="#939393" FontSize="12" />
+    <DefaultText ux:Class="Temperature" Color="#333333"  FontSize="20" Margin="6,0,0,0" />
+    <DockPanel>
+    <StackPanel Height="10%" Dock="Top" />    
+    <StackPanel Height="20%" Dock="Top" ItemSpacing="-32" Padding="5" >    
+        <Text Value="      Q u e n t i n h a" Color="#939393"  FontSize="45" />
+        <Text Value="Carioca" Color="#333333"  FontSize="100" />                           
+    </StackPanel>
+    <StackPanel>
+        <Text Value="Uma experiência móvel deliciosa" Color="White" FontSize="12" />
+    </StackPanel>
+    
+    
+    
+    </DockPanel>
+
+</Page>

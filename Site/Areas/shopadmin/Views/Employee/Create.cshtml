@@ -1,0 +1,66 @@
+﻿@model QuentinhaCarioca.Root.Employee
+@using Microsoft.AspNetCore.Http
+@using Newtonsoft.Json
+@{
+    ViewData["Title"] = "Criar usuário";
+    Layout = "~/Areas/shopadmin/Views/Shared/_Layout.cshtml";
+    if (Context.Session.GetString("LegalUser") == null)
+    {
+        throw new Exception("Ferrou");
+    }
+
+    var legalUserId = Context.Session.GetString("LegalUser");
+
+
+}
+<hr />
+<form id="IndividualForm" asp-area="shopadmin" asp-controller="Employee" asp-action="Create" method="post">
+    <input type="hidden" asp-for="LegalUser.LegalUserId" value="@legalUserId" />
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="User.FirstName"  class="control-label">Nome</label>
+            <input type="text" required asp-for="User.FirstName" class="form-control" maxlength="30" />
+        </div>
+        <div class="col-md-6">
+            <label asp-for="User.LastName" class="control-label">Sobrenome</label>
+            <input type="text" required asp-for="User.LastName" class="form-control" maxlength="30" />
+        </div>
+
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="User.UserName" class="control-label">Nome de Usuário</label>
+            <input type="text" required asp-for="User.UserName" class="form-control" maxlength="30" />
+        </div>
+        <div class="col-md-6">
+            <label asp-for="User.PasswordHash" class="control-label">Senha</label>
+            <input type="password" maxlength="10" required asp-for="User.PasswordHash" class="form-control" />
+        </div>
+    </div>
+    <br />
+    <hr />
+    <h5>Contatos</h5>
+    <div class="row">
+        <div class="col-md-4" style="padding-left: 10px;">
+            <label class="control-label">E-mail</label>
+            <input type="email" class="form-control" asp-for="User.Contacts[0].Email"  maxlength="50" />
+        </div>
+        <div class="col-md-4" style="padding-left: 3px;">
+            <label class="control-label">Telefone</label>
+            <input asp-for="User.Contacts[0].Phone" data-inputmask="'mask': '(99)9999-9999'" class="form-control" />
+        </div>
+        <div class="col-md-4" style="padding-left: 3px;">
+            <label class="control-label">Celular</label>
+            <input asp-for="User.Contacts[0].CellPhone" data-inputmask="'mask': '(99)99999-9999'" class="form-control" />
+        </div>
+    </div>
+    
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</form>
+<script src="~/appjs/contact.js"></script>

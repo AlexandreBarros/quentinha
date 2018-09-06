@@ -1,0 +1,149 @@
+﻿@model QuentinhaCarioca.Root.LegalUserSettings
+@using  Microsoft.AspNetCore.Http
+@using Newtonsoft.Json
+@{
+    ViewData["Title"] = "Configurar Estabelecimento";
+    Layout = "~/Areas/shopadmin/Views/Shared/_Layout.cshtml";
+    var legalUserId = Context.Session.GetString("LegalUser");
+}
+
+
+<form id="CreateShopSettings" asp-area="shopadmin" asp-controller="LegalUserSettings" asp-action="Edit" method="post">
+    <input type="hidden" asp-for="LegalUser.LegalUserId" value="@legalUserId" />
+    <input type="hidden" asp-for="LegalUserSettingsId" />
+    <div class="row">
+        <div class="col-md-12">
+            <label>Se desmarcado seu estabelecimento não estará apto a realizar pedidos independente das outras configurações</label>
+            <br />
+            <input type="checkbox" checked="checked" asp-for="IsOpen" style="right:15px;" />
+
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="DeliveryCoust" class="control-label">Se há acréscimos para entrega à domícilio, informe o preço</label>
+            <input asp-for="DeliveryCoust" type="text" min="0" max="100" class="form-control" />
+        </div>
+    </div>
+    <br />
+    <hr />
+    <h5>Horário de Funcionamento</h5>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+            <label>Aberto 2ª Feira</label><br />
+            <input type="checkbox" asp-for="MondayIsWorkDay" />
+        </div>
+        <div class="col-md-1">
+            <label asp-for="MondayStartHour" class="control-label">A partir de</label>
+            <input asp-for="MondayStartHour" type="text" class="form-control" placeholder="00:00" style="padding-left: 10px;" />
+        </div>
+        <div class="col-md-1">
+            <label asp-for="MondayEndHour" class="control-label">Até</label>
+            <input asp-for="MondayEndHour" class="form-control" placeholder="00:00" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+            <label>Aberto 3ª Feira</label><br />
+            <input type="checkbox" asp-for="TuesdayIsWorkDay" />
+        </div>
+        <div class="col-md-1">
+            <label asp-for="TuesdayStartHour" class="control-label">A partir de</label>
+            <input asp-for="TuesdayStartHour" type="text" class="form-control" placeholder="00:00" style="padding-left: 10px;" />
+        </div>
+        <div class="col-md-1">
+            <label asp-for="TuesdayEndHour" class="control-label">Até</label>
+            <input asp-for="TuesdayEndHour" class="form-control" placeholder="00:00" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+            <label>Aberto 4ª Feira</label><br />
+            <input type="checkbox" asp-for="WednesdayIsWorkDay" />
+        </div>
+        <div class="col-md-1">
+            <label asp-for="WednesdayStartHour" class="control-label">A partir de</label>
+            <input asp-for="WednesdayStartHour" type="text" class="form-control" placeholder="00:00" style="padding-left: 10px;" />
+        </div>
+        <div class="col-md-1">
+            <label asp-for="WednesdayEndHour" class="control-label">Até</label>
+            <input asp-for="WednesdayEndHour" class="form-control" placeholder="00:00" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+            <label>Aberto 5ª Feira</label><br />
+            <input type="checkbox" asp-for="ThursdayIsWorkDay" />
+        </div>
+        <div class="col-md-1">
+            <label asp-for="ThursdayStartHour" class="control-label">A partir de</label>
+            <input asp-for="ThursdayStartHour" type="text" class="form-control" placeholder="00:00" style="padding-left: 10px;" />
+        </div>
+        <div class="col-md-1">
+            <label asp-for="ThursdayEndHour" class="control-label">Até</label>
+            <input asp-for="ThursdayEndHour" class="form-control" placeholder="00:00" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+            <label>Aberto 6ª Feira</label><br />
+            <input type="checkbox" asp-for="FridayIsWorkDay" />
+        </div>
+        <div class="col-md-1">
+            <label asp-for="FridayStartHour" class="control-label">A partir de</label>
+            <input asp-for="FridayStartHour" type="text" class="form-control" placeholder="00:00" style="padding-left: 10px;" />
+        </div>
+        <div class="col-md-1">
+            <label asp-for="FridayEndHour" class="control-label">Até</label>
+            <input asp-for="FridayEndHour" class="form-control" placeholder="00:00" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+            <label>Aberto Sábado</label><br />
+            <input type="checkbox" asp-for="SaturdayIsWorkDay" />
+        </div>
+        <div class="col-md-1">
+            <label asp-for="SaturdayStartHour" class="control-label">A partir de</label>
+            <input asp-for="SaturdayStartHour" type="text" class="form-control" placeholder="00:00" style="padding-left: 10px;" />
+        </div>
+        <div class="col-md-1">
+            <label asp-for="SaturdayEndHour" class="control-label">Até</label>
+            <input asp-for="SaturdayEndHour" class="form-control" placeholder="00:00" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+            <label>Aberto Domingo</label><br />
+            <input type="checkbox" asp-for="SundayIsWorkDay" />
+        </div>
+        <div class="col-md-1">
+            <label asp-for="SundayStartHour" class="control-label">A partir de</label>
+            <input asp-for="SundayStartHour" type="text" class="form-control" placeholder="00:00" style="padding-left: 10px;" />
+        </div>
+        <div class="col-md-1">
+            <label asp-for="SundayEndHour" class="control-label">Até</label>
+            <input asp-for="SundayEndHour" class="form-control" placeholder="00:00" />
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Registrar" class="btn btn-default" />
+    </div>
+</form>
+

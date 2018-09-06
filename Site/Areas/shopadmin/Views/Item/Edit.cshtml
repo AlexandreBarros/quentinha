@@ -1,0 +1,64 @@
+﻿@model QuentinhaCarioca.Root.Item
+
+@{
+    ViewData["Title"] = "Criar Item";
+    Layout = "~/Areas/shopadmin/Views/Shared/_Layout.cshtml";
+}
+
+<hr />
+
+<form asp-area="shopadmin" asp-action="Edit" asp-controller="Item" method="post">
+    <input type="hidden" asp-for="ItemId" />
+    <div class="row">
+        <div class="col-md-6">
+            <label class="control-label">Categorias</label>
+            <select id="Categories" multiple class="form-control" asp-items="(List<SelectListItem>)ViewBag.CategoryItems"></select>
+        </div>
+        <div class="col-md-1" id="divCategories"></div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="Name" class="control-label">Nome</label>
+            <input asp-for="Name" class="form-control" placeholder="Nome do Item" required maxlength="50" />
+        </div>
+        <div class="col-md-3">
+            <label asp-for="Price" class="control-label">Preço</label>
+            <input asp-for="Price" type="text" class="form-control" placeholder="Preço normal" required maxlength="5" value="@Math.Round(Model.Price,2)" />
+        </div>
+        <div class="col-md-3" style="left: 5px;">
+            <label asp-for="PricePromo" class="control-label">Preço Promocional</label>
+            <input asp-for="PricePromo" type="text" class="form-control" placeholder="Preço Promocional" maxlength="5" value="@Math.Round(Model.PricePromo,2)" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <label asp-for="Description" class="control-label">Descrição</label>
+            <textarea rows="3" class="form-control" asp-for="Description" placeholder="Descrição do Item" maxlength="255"></textarea>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="Photo" class="control-label">Imagem</label>
+            <input type="file" id="ItemImage" name="ItemImage" onchange="readUrl(this)" />
+            <input type="hidden" asp-for="Photo" class="form-control" />
+        </div>
+        <div class="col-md-6" style="text-align:center;">
+            @if (!String.IsNullOrWhiteSpace(Model.Photo))
+            {
+                <img src="@Model.Photo" width="360" height="236" />
+            }
+            else
+            {
+                <img src="~/img/menu/1/1.jpg" id="imgRender" />
+            }
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Registrar" class="btn btn-default" />
+    </div>
+</form>
+<script src="~/appjs/item.js"></script>

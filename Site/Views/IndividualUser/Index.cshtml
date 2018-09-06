@@ -1,0 +1,50 @@
+﻿@model IEnumerable<QuentinhaCarioca.Root.Customer>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                E-mail
+            </th>
+            <th>
+                Telefone
+            </th>
+            <th>
+                Celular
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="Edit" asp-controller="IndividualUser" asp-route-identifier="@item.User.IndividualUserId">
+                            @String.Format("{0} {1}", item.User.FirstName, item.User.LastName)
+                        </a>
+                        </td>
+                    <td>
+                        @item.User.Contacts.FirstOrDefault().Email
+                    </td>
+                    <td>
+                        @item.User.Contacts.FirstOrDefault().Phone
+                    </td>
+                    <td>
+                        @item.User.Contacts.FirstOrDefault().CellPhone
+                    </td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>

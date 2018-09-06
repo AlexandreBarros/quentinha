@@ -1,0 +1,77 @@
+﻿@model IEnumerable<QuentinhaCarioca.Root.ViewModel.EmployeeRequest>
+
+@{
+    ViewData["Title"] = "Funcionários registrados";
+    Layout = "~/Areas/shopadmin/Views/Shared/_Layout.cshtml";
+}
+
+<a href="LegalUser/Create">Criar</a>
+<hr />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Nome de Usuário
+            </th>
+
+            <th>
+                Criado em
+            </th>
+            <th>
+                Ativo
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count() > 0)
+        {
+            string userName = String.Empty;
+            @foreach (var item in Model)
+            {
+                userName = $"{item.FirstName} {item.LastName}";
+                <tr>
+                    <td>
+                        <a href="./edit?identifier=@item.EmployeeId">
+                            @userName
+                        </a>
+                    </td>
+                    <td>
+                        @item.UserName
+                    </td>
+                    <td>
+                        @item.CreationDate.ToShortDateString()
+                    </td>
+                    <td>
+                        @if (item.DetachmentDate.HasValue)
+                        {
+                            <label>
+                                @item.DetachmentDate.Value.ToShortDateString()
+                            </label>
+                        }
+                        else
+                        {
+                            <label>ATIVO</label>
+
+                        }
+                    </td>
+                    <td>
+                        @if (!item.DetachmentDate.HasValue)
+                        {
+                            <input id="@item.EmployeeId" type="button" class="btn btn-default" style="font-size:small;" value="Desativar" onclick="Remove(this)" />
+                        }
+                        else
+                        {
+                            <input id="@item.EmployeeId" type="button" class="btn btn-default" style="font-size:small;" value="Reativar" onclick="Reactivate(this)" />
+                        }
+
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<script src="~/appjs/employee.js"></script>

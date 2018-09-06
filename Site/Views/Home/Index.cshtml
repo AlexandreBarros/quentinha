@@ -1,0 +1,91 @@
+﻿@model IEnumerable<QuentinhaCarioca.Root.ViewModel.LegalUserResponse>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .checked {
+        color: orange;
+    }
+</style>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<table class="table table-striped" style="width:100%; font-size:smaller;">
+    <thead>
+        <tr>
+
+            <th style="width:30%; text-align:left;"></th>
+            <th style="width: 30%; text-emphasis:open; text-align:center;"></th>
+            <th style="text-align:justify"></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            item.Reviews = "3";
+            <tr>
+
+                <td>
+                    <img src="@item.Logo" style="width:138px; height:59px;" />
+                </td>
+
+                <td valign="middle">
+                    <label>@item.ExhibitionName.ToUpper()</label>
+                </td>
+                <td>
+                    <label>@item.Address</label>
+                </td>
+                <td>
+                    <label>@item.Contact</label>
+                </td>
+                <td>
+                    <label>
+                        @if (int.Parse(item.Reviews) >= 0)
+                        {
+                            <span class="fa fa-star checked"></span>
+                        }
+                        else
+                        {
+                            <span class="fa fa-star"></span>
+                        }
+                        @if (int.Parse(item.Reviews) >= 1)
+                        {
+                            <span class="fa fa-star checked"></span>
+                        }
+                        else
+                        {
+                            <span class="fa fa-star"></span>
+                        }
+                        @if (int.Parse(item.Reviews) >= 2)
+                        {
+                            <span class="fa fa-star checked"></span>
+                        }
+                        else
+                        {
+                            <span class="fa fa-star"></span>
+                        }
+                        @if (int.Parse(item.Reviews) >= 3)
+                        {
+                            <span class="fa fa-star checked"></span>
+                        }
+                        else
+                        {
+                            <span class="fa fa-star"></span>
+                        }
+                        @if (int.Parse(item.Reviews) >= 4)
+                        {
+                            <span class="fa fa-star checked"></span>
+                        }
+                        else
+                        {
+                            <span class="fa fa-star"></span>
+                        }
+
+                    </label>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

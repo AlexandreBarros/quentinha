@@ -1,0 +1,57 @@
+﻿@model QuentinhaCarioca.Root.Category
+@using Microsoft.AspNetCore.Http
+@using Newtonsoft.Json
+
+@{
+    ViewData["Title"] = "Criar Categoria";
+    Layout = "~/Areas/shopadmin/Views/Shared/_Layout.cshtml";
+    var legalUserId = JsonConvert.DeserializeObject<string>(Context.Session.GetString("LegalUser"));
+}
+<hr />
+
+<form asp-area="shopadmin" asp-action="Create" asp-controller="Category" method="post">
+    <input type="hidden" asp-for="LegalUser.LegalUserId" value="@legalUserId" />
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="Parent.Name">Categoria Ascendente</label>
+            <select class="form-control" asp-for="Parent" asp-items="(List<SelectListItem>)ViewBag.CategoriesListItems"></select>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="Name" class="control-label">Nome</label>
+            <input type="text" maxlength="50" asp-for="Name" class="form-control" required />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="UrlCarteLogo" class="control-label">Imagem</label>
+            <input type="file" id="CategoryImage" class="form-control" onchange="readUrl(this)" />
+            <input type="hidden" asp-for="UrlCarteLogo" />
+        </div>
+        <div class="col-md-6" style="text-align:center;">
+            <img src="~/img/menu/1/1.jpg" id="imgRender" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <label asp-for="Description" class="control-label">Descrição</label><br />
+            <textarea class="form-control" asp-for="Description" rows="3" maxlength="500"></textarea>
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Registrar" class="btn btn-default" />
+    </div>
+</form>
+
+<script>
+    $(function () {
+        $('#Parent').prepend('<option></option>');
+        $('#Parent option:first-child').prop('selected', 'selected');
+
+    });
+</script>

@@ -1,0 +1,9 @@
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\bin\Debug\netcoreapp2.0\Quentinha-Carioca.deps.json
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\bin\Debug\netcoreapp2.0\Quentinha-Carioca.dll
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\obj\Debug\netcoreapp2.0\Quentinha-Carioca.csproj.CoreCompileInputs.cache
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\obj\Debug\netcoreapp2.0\Quentinha-Carioca.AssemblyInfoInputs.cache
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\obj\Debug\netcoreapp2.0\Quentinha-Carioca.AssemblyInfo.cs
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\bin\Debug\netcoreapp2.0\Quentinha-Carioca.pdb
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\obj\Debug\netcoreapp2.0\Quentinha-Carioca.dll
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\obj\Debug\netcoreapp2.0\Quentinha-Carioca.pdb
+E:\Projetos\Quentinha-Carioca\Quentinha-Carioca\obj\Debug\netcoreapp2.0\Quentinha-Carioca.csprojAssemblyReference.cache

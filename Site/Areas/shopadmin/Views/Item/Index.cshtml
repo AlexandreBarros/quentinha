@@ -1,0 +1,61 @@
+﻿@model List<QuentinhaCarioca.Root.CategoryItem>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/shopadmin/Views/Shared/_Layout.cshtml";
+}
+
+
+<a href="/Create">Criar</a>
+<hr />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Categoria
+            </th>
+            <th>
+                Nome
+            </th>
+
+            <th>
+                Preço
+            </th>
+            <th>
+                Preço Promocional
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count() > 0)
+        {
+            string category = String.Empty;
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @if (true)
+                        {
+                            /**/
+                        }
+                        <label>@item.Category.Name</label>
+                    </td>
+                    <td>
+                        <a href="./Edit?identifier=@item.Item.ItemId">
+                            @item.Item.Name
+                        </a>
+                    </td>
+                    <td>
+                        @String.Format("{0:c}", item.Item.Price)
+                    </td>
+                    <td>
+                        @String.Format("{0:c}", item.Item.PricePromo)
+                    </td>
+                </tr>
+                category = item.Category.Name;
+            }
+        }
+    </tbody>
+</table>
+

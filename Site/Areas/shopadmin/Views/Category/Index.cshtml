@@ -1,0 +1,72 @@
+﻿@model IEnumerable<QuentinhaCarioca.Root.Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/shopadmin/Views/Shared/_Layout.cshtml";
+}
+
+<a href="/Create">Criar</a>
+<hr />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Ascendente
+            </th>
+
+            <th>
+                Criado em
+            </th>
+            <th>
+                Ativo
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count() > 0)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="./category/edit?identifier=@item.CategoryId" title="Editar">
+                            <label>@item.Name</label>
+                        </a>
+                    </td>
+                    <td>
+                        @if (item.Parent != null)
+                        {
+                            <label>
+                                @item.Parent.Name
+                            </label>
+                        }
+                        else
+                        {
+                            <label>-</label>
+                        }
+                    </td>
+                    <td>
+                        @item.CreationDate.ToShortDateString()
+                    </td>
+                    <td>
+                        @if (item.DetachmentDate.HasValue)
+                        {
+                            <label>
+                                @item.DetachmentDate.Value.ToShortDateString()
+                            </label>
+                        }
+                        else
+                        {
+                            <label>ATIVO</label>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+

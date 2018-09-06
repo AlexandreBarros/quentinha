@@ -1,0 +1,11 @@
+E:\Projetos\Quentinha-Carioca\RestFulServices\bin\Debug\netcoreapp2.0\RestFulServices.deps.json
+E:\Projetos\Quentinha-Carioca\RestFulServices\bin\Debug\netcoreapp2.0\RestFulServices.runtimeconfig.json
+E:\Projetos\Quentinha-Carioca\RestFulServices\bin\Debug\netcoreapp2.0\RestFulServices.runtimeconfig.dev.json
+E:\Projetos\Quentinha-Carioca\RestFulServices\bin\Debug\netcoreapp2.0\RestFulServices.dll
+E:\Projetos\Quentinha-Carioca\RestFulServices\bin\Debug\netcoreapp2.0\RestFulServices.pdb
+E:\Projetos\Quentinha-Carioca\RestFulServices\obj\Debug\netcoreapp2.0\RestFulServices.csprojAssemblyReference.cache
+E:\Projetos\Quentinha-Carioca\RestFulServices\obj\Debug\netcoreapp2.0\RestFulServices.csproj.CoreCompileInputs.cache
+E:\Projetos\Quentinha-Carioca\RestFulServices\obj\Debug\netcoreapp2.0\RestFulServices.AssemblyInfoInputs.cache
+E:\Projetos\Quentinha-Carioca\RestFulServices\obj\Debug\netcoreapp2.0\RestFulServices.AssemblyInfo.cs
+E:\Projetos\Quentinha-Carioca\RestFulServices\obj\Debug\netcoreapp2.0\RestFulServices.dll
+E:\Projetos\Quentinha-Carioca\RestFulServices\obj\Debug\netcoreapp2.0\RestFulServices.pdb
