@@ -1,0 +1,10 @@
+# Libraries
+*.lib
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.pdb
+
+# Directory
+/bin/
+
